@@ -19,9 +19,10 @@ function App() {
     setError("");
     setAnimated(false);
     try {
-      const response = await axios.get("http://localhost:8080/api/area", {
-        params: { side },
-      });
+          const response = await axios.get(
+      "https://area-of-square.onrender.com/api/area",  // ← Render URL
+      { params: { side } }
+    );
       setArea(response.data);
       setTimeout(() => setAnimated(true), 50);
     } catch {
